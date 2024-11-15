@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-scroll'; // Added import for Link from react-scroll
 import CountUp from 'react-countup';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -10,64 +11,75 @@ import PropertyInvestmentSection from './Funding';
 import Footer from './Layout/Footer';
 import Investing from './Investing';
 import Consulting from './Consultation';
+import Logo from '../assets/Logorich.png';
 
 const HeroSection = () => {
+  const [activeSection, setActiveSection] = useState('home');
+
   useEffect(() => {
     AOS.init({
-      duration: 800, // Light and fast animation duration
-      once: true, // Animation should only occur once
-      easing: 'ease-out', // Smooth easing for animations
+      duration: 800,
+      once: true,
+      easing: 'ease-out',
     });
+
+    const handleScroll = () => {
+      const sections = ['home', 'investing', 'funding', 'consultation', 'eb5'];
+      let currentSection = '';
+      sections.forEach((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 0 && rect.bottom >= 0) {
+            currentSection = section;
+          }
+        }
+      });
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0e0c15] via-[#0e0c15] to-[#0f3460] bg-fixed">
+      
       {/* Header */}
-      <header className="flex items-center p-4 bg-[#01000310] backdrop-blur-md sticky top-0 z-50">
-        <h1 className="text-2xl font-bold text-[#aa3ea5] mr-8">RichFunding</h1>
-        <nav className="flex-grow flex justify-center">
-          <ul className="flex space-x-8">
-            {/* Navigation Links */}
-            <li>
-              <a href="#home" className="text-gray-300 hover:text-[#aa3ea5] text-lg font-semibold transition-colors duration-300 hover:underline underline-offset-4">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#services" className="text-gray-300 hover:text-[#aa3ea5] text-lg font-semibold transition-colors duration-300 hover:underline underline-offset-4">
-                Investing
-              </a>
-            </li>
-            <li>
-              <a href="#about" className="text-gray-300 hover:text-[#aa3ea5] text-lg font-semibold transition-colors duration-300 hover:underline underline-offset-4">
-                Funding
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="text-gray-300 hover:text-[#aa3ea5] text-lg font-semibold transition-colors duration-300 hover:underline underline-offset-4">
-                Consultation
-              </a>
-            </li>
+      <header className="flex items-center p-1 bg-[#0e0c15] backdrop-blur-md sticky top-0 z-50">
+        <img src={Logo}  className='h-16'/>
+        <nav className="flex-grow flex">
+        <ul className="flex space-x-8  ">
+  {/* Navigation Links */}
+  {['home', 'investing', 'funding', 'consultation', 'eb5'].map((section) => (
+    <li key={section}>
+      <Link 
+        to={section} 
+        smooth={true} 
+        duration={500} 
+        activeClass="text-[#aa3ea5] "
+        className={`text-gray-300 text-lg font-semibold transition-colors duration-300 hover:text-[#aa3ea5] cursor-pointer ${activeSection === section ? 'text-[#aa3ea5] underline decoration-[#aa3ea5] decoration-2 font-bold transition-all duration-300 ease-in-out transform scale-105' : ''}`}
+      >
+        {section.charAt(0).toUpperCase() + section.slice(1)}
+      </Link>
+    </li>
+  ))}
+</ul>
 
-            <li>
-              <a href="#contact" className="text-gray-300 hover:text-[#aa3ea5] text-lg font-semibold transition-colors duration-300 hover:underline underline-offset-4">
-               EB-5
-              </a>
-            </li>
-
-            
-          </ul>
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="flex flex-col md:flex-row items-center justify-between p-10 min-h-screen">
+      <section id='home' className="flex flex-col md:flex-row items-center justify-between p-10 min-h-screen">
         {/* Left Side: Text Content */}
         <div className="flex flex-col w-full md:w-1/2 space-y-4 mb-6 md:mb-0" data-aos="fade-right">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-200">Welcome to RichFunding</h1>
           <span className="text-[#ffff] text-lg">"The Resource for Investors"</span>
           <p className="text-lg md:text-xl text-gray-300">
-            We  serve to help investors and sellers achieve their financial goals. I can help you maximize your investment potential! You can contact me anytime, any day of the week.
+            We serve to help investors and sellers achieve their financial goals. I can help you maximize your investment potential! You can contact me anytime, any day of the week.
           </p>
           <div>
             <button className='gradient-button' data-aos="fade-up">Explore plans</button>
@@ -106,10 +118,10 @@ const HeroSection = () => {
           <img src={rectangleImage} alt="Rectangle" className="w-[520px] h-[250px] object-cover rounded-3xl shadow-2xl transition-transform transform hover:scale-105" data-aos="zoom-in"/>
         </div>
       </section>
+      
       <PropertyInvestmentSection/>
       <Investing/>
       <Consulting/>
-      
     </div>
   );
 };

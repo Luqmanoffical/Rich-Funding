@@ -4,7 +4,7 @@ import consultant from "../assets/consultant.png"; // Replace with an actual ima
 
 const Consulting = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden font-poppins">
+    <div id="consultation" className="relative min-h-screen overflow-hidden font-poppins">
       {/* LampContainer positioned closer to the Header */}
       <LampContainer className="absolute -top-20 left-0 z-0 opacity-75" />
 

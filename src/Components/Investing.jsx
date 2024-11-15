@@ -4,7 +4,7 @@ import imger from '../assets/property1.jpg';
 const Investing = () => {
   return (
     <div>
-      <section className="py-12 ">
+      <section id='funding' className="py-12 ">
         <div className="container mx-auto text-center px-4">
           <h2 className="text-4xl font-bold text-white mb-6">Loan Offers</h2>
           <p className="text-gray-300 text-lg mb-12 max-w-3xl mx-auto">

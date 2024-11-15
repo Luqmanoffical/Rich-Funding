@@ -164,7 +164,7 @@ const PropertyInvestmentSection = () => {
   };
 
   return (
-    <div className="flex flex-col items-center py-16 px-6 lg:px-20">
+    <div  id='investing' className="flex flex-col items-center py-16 px-6 lg:px-20">
       {/* Main Headings */}
       <h1 className="text-4xl font-bold text-center mb-4  text-white">
         Investment Opportunity
