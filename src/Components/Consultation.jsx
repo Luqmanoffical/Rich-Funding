@@ -47,7 +47,7 @@ const Consulting = () => {
               </p>
               <p className="mt-4 text-sm md:text-base">
                 Email Me: <a href="mailto:richfunding@yahoo.com" className="underline hover:text-blue-300">richfunding@yahoo.com</a><br />
-                <a href="#" className="underline text-purple-800 hover:text-blue-300">Visit my blog here</a>
+                <button href="#" className="gradient-button">Visit my blog here</button>
               </p>
             </div>
           </div>

@@ -1,131 +1,67 @@
 import React from "react";
-// import footerLogo from "../../assets/logo.png";
-import Banner from "../../assets/footer-pattern.jpg";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaLocationArrow,
-  FaMobileAlt,
-} from "react-icons/fa";
-
-const BannerImg = {
-  backgroundImage: `url(${Banner})`,
-  backgroundPosition: "bottom",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "cover",
-  height: "100%",
-  width: "100%",
-};
-
-const FooterLinks = [
-  {
-    title: "Fashion",
-    link: "/#",
-  },
-  {
-    title: "Electronics",
-    link: "/#about",
-  },
-  {
-    title: "Beauty",
-    link: "/#contact",
-  },
-  {
-    title: "Food",
-    link: "/#blog",
-  },
-];
+import Logo from "../../assets/Logorich.png";
 
 const Footer = () => {
   return (
-    <div style={BannerImg} className="text-white">
-      <div className="container">
-        <div data-aos="zoom-in" className="grid md:grid-cols-3 pb-44 pt-5">
-          {/* company details */}
-          <div className="py-8 px-4">
-            <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3">
-              <img src={""} alt="" className="max-w-[50px]" />
-              UPTrend.
-            </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum in
-              beatae ea recusandae blanditiis veritatis.
-            </p>
-          </div>
+    <footer className="bg-[#0e0c15] text-gray-300 py-8 border-t-2 border-[#aa3ea54f]">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-center px-6 ">
+        {/* Logo and Tagline */}
+        <div className="flex flex-col items-center md:items-start">
+          <img src={Logo} alt="Rich Realty" className="h-12 mb-2" />
+          <p className="text-sm text-gray-400 text-center md:text-left leading-relaxed">
+            Trusted solutions for property investments, buying, and selling.
+          </p>
+        </div>
 
-          {/* Footer Links */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 col-span-2 md:pl-10">
-            <div>
-              <div className="py-8 px-4">
-                <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
-                  Important Links
-                </h1>
-                <ul className="flex flex-col gap-3">
-                  {FooterLinks.map((link) => (
-                    <li
-                      className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200"
-                      key={link.title}
-                    >
-                      <span>{link.title}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div>
-              <div className="py-8 px-4">
-                <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
-                  Links
-                </h1>
-                <ul className="flex flex-col gap-3">
-                  {FooterLinks.map((link) => (
-                    <li
-                      className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200"
-                      key={link.title}
-                    >
-                      <span>{link.title}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+        {/* Quick Links */}
+        <nav className="text-center md:text-left">
+          <h3 className="text-lg font-semibold text-gray-200 mb-4 uppercase tracking-wide">
+            Quick Links
+          </h3>
+          <ul className="space-y-2">
+            {["About Us", "Properties", "Services", "Contact"].map((item) => (
+              <li key={item}>
+                <a
+                  href={`#${item.toLowerCase().replace(/\s+/g, "")}`}
+                  className="text-gray-400 hover:text-[#009ca0] transition-colors duration-300"
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-            {/* social links */}
-
-            <div>
-              <div className="flex items-center gap-3 mt-6">
-                <a href="#">
-                  <FaInstagram className="text-3xl" />
-                </a>
-                <a href="#">
-                  <FaFacebook className="text-3xl" />
-                </a>
-                <a href="#">
-                  <FaLinkedin className="text-3xl" />
-                </a>
-              </div>
-              <div className="mt-6">
-                <div className="flex items-center gap-3">
-                  <FaLocationArrow />
-                  <p>Glaxit, Punjab Pakistan</p>
-                </div>
-                <div className="flex items-center gap-3 mt-3">
-                  <FaMobileAlt />
-                  <p>+91 123456789</p>
-                </div>
-                <div className="flex items-center gap-3 mt-3">
-                  <p>Design and Develop By <span style={{
-        fontFamily: " Faculty Glyphic, Mona Sans, Roboto, sans-serif" 
-       }} className="text-green-600 font-bold">Glaxit</span> </p>
-                </div>
-                
-              </div>
-            </div>
-          </div>
+        {/* Contact Info */}
+        <div className="text-center md:text-left">
+          <h3 className="text-lg font-semibold text-gray-200 mb-4 uppercase tracking-wide">
+            Contact Us
+          </h3>
+          <p className="text-sm text-gray-400">
+            Phone:{" "}
+            <a href="tel:+1234567890" className="hover:text-[#009ca0]">
+              +1 (234) 567-890
+            </a>
+          </p>
+          <p className="text-sm text-gray-400">
+            Email:{" "}
+            <a href="mailto:info@richrealty.com" className="hover:text-[#009ca0]">
+              info@richrealty.com
+            </a>
+          </p>
+          <p className="text-sm text-gray-400">
+            Address: 123 Realty Lane, Cityville, USA
+          </p>
         </div>
       </div>
-    </div>
+
+      {/* Bottom Line */}
+      <div className="mt-6 border-t border-gray-700 pt-4 text-center">
+        <p className="text-sm text-gray-500">
+          © {new Date().getFullYear()} Rich Realty. All rights reserved.
+        </p>
+      </div>
+    </footer>
   );
 };
 
