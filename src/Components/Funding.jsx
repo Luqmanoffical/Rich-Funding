@@ -3,7 +3,7 @@ import { FaFileDownload } from 'react-icons/fa';
 import propertyImage from '../assets/property1.jpg';
 import './Designfile/Button.css';
 
-const investments = [
+const investments = [ 
   '100,000 - 500,000',
   '500,000 - 1,000,000',
   '1,000,000 - 5,000,000',
