@@ -93,8 +93,17 @@ const Footer = () => {
       <div className="bg-gray-900 flex flex-col md:flex-row justify-between items-center text-white py-4 px-6">
         {/* Left: First Paragraph */}
         <p className="text-sm text-center md:text-left mb-4 md:mb-0">
-          Designed and Developed by <span className="text-[#aa3ea5]">Glaxit</span>.
-        </p>
+  Designed and Developed by{' '}
+  <a 
+    href="https://glaxit.com/" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="text-[#aa3ea5] hover:underline"
+  >
+    Glaxit
+  </a>.
+</p>
+
 
         {/* Center: Second Paragraph */}
         <p className="text-xs text-gray-400 text-center mb-4 md:mb-0">
