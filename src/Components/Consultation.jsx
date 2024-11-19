@@ -28,7 +28,7 @@ const Consulting = () => {
               <img
                 src={consultant}
                 alt="Consultation"
-                className="h-[250px] w-[250px] md:h-[300px] md:w-[300px] lg:h-[400px] lg:w-[400px] rounded-lg shadow-lg transition-transform transform hover:scale-105"
+                className="h-[250px] w-[250px] md:h-[300px] md:w-[300px] lg:h-[400px] lg:w-[400px] rounded-lg  transition-transform transform hover:scale-105"
               />
             </div>
 
