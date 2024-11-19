@@ -15,12 +15,12 @@ const Consulting = () => {
   return (
     <>
     
-      <section>
+      <section id="consultation" className="overflow-x-hidden" >
         <div  className="relative min-h-screen overflow-hidden font-poppins">
           {/* LampContainer positioned closer to the Header */}
 
           {/* Consultation Page Content */}
-          <div id="consultation"   className="relative z-10 flex flex-col justify-center  md:p-10 min-h-screen">
+          <div   className="relative z-10 flex flex-col justify-center  md:p-10 min-h-screen">
             <div className="flex flex-col items-center mt-10 md:mt-20 text-white">
               {/* Page Header */}
               <h1

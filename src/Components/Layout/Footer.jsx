@@ -14,7 +14,7 @@ const Footer = () => {
     <div>
       {/* Main Footer Section */}
       <footer className="bg-[#0e0c15] py-10">
-        <div className="max-w-screen-xl mx-auto text-center text-white px-6">
+        <div className="max-w-screen-xl mx-auto text-center text-white px-6 overflow-x-hidden">
           {/* Logo */}
           <div className="mb-6">
             <img src={Logo} alt="Logo" className="mx-auto h-16 w-auto" />

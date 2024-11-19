@@ -11,7 +11,7 @@ const Header = ({ activeSection }) => {
   };
 
   return (
-    <header className="flex items-center justify-between p-2 bg-[#0e0c15] backdrop-blur-md sticky top-0 z-50">
+    <header className="overflow-x-hidden flex items-center justify-between p-2 bg-[#0e0c15] backdrop-blur-md sticky top-0 z-50">
       {/* Logo */}
       <img src={Logo} className="h-16 ml-5" alt="Logo" />
 

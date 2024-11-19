@@ -37,7 +37,7 @@ const EB5 = () => {
   }, []);
 
   return (
-    <section id="eb5" className="pt-11">
+    <section id="eb5" className="pt-11 overflow-x-hidden">
       <div className="py-16 text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

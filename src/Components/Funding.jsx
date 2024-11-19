@@ -126,7 +126,7 @@ const PropertyInvestmentSection = () => {
   }, []);
 
   return (
-    <section id='investing' className='pt-11'>
+    <section id='investing' className='pt-11 overflow-x-hidden'>
       <div className="flex flex-col items-center py-16 px-6 lg:px-20">
         <h1 className="text-4xl font-bold text-center mb-4 text-white" data-aos="fade-up">Investment Opportunity</h1>
         <h2 className="text-2xl font-semibold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-[#6d378d] via-[#972491] to-[#6d378d]" data-aos="fade-up" data-aos-delay="200">
