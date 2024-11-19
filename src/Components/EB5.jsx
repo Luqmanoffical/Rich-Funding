@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa'; // Importing icons
-import eb5 from '../assets/eb5.png';
+import eb5 from '../assets/eb5.png'; // Replace with actual image URL
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
 
 const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -27,50 +29,64 @@ const FAQSection = () => {
     },
   ];
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+      once: true, // Ensure animation happens only once
+    });
+  }, []);
+
   return (
-    <section id='eb5' className="py-16 text-white">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left Column - FAQ Section */}
-          <div className="space-y-6">
-            <h2 className="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#aa3ea5] to-blue-500 text-center lg:text-left">
-              EB-5 Program
-            </h2>
-            <p className="text-lg">
-              Learn about the EB-5 visa program and its benefits for investors.
-            </p>
+    <section id="eb5" className="pt-11">
+      <div className="py-16 text-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left Column - FAQ Section */}
+            <div className="space-y-6 ml-6" data-aos="fade-right">
+              <h2 className="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#aa3ea5] to-blue-500 text-center lg:text-left">
+                EB-5 Program
+              </h2>
+              <p className="text-lg" data-aos="fade-up">
+                Learn about the EB-5 visa program and its benefits for investors.
+              </p>
 
-            {faqData.map((item, index) => (
-              <div key={index} className="bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
-                <button
-                  className="w-full text-left px-6 py-4 text-xl font-semibold text-white focus:outline-none flex items-center justify-between"
-                  onClick={() => toggleAnswer(index)}
+              {faqData.map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transition duration-300"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 200} // Staggered delay for each FAQ
                 >
-                  <span>{item.question}</span>
-                  <span className="ml-2">
-                    {activeIndex === index ? (
-                      <FaChevronUp className="text-[#aa3ea5]" />
-                    ) : (
-                      <FaChevronDown className="text-[#aa3ea5]" />
-                    )}
-                  </span>
-                </button>
-                {activeIndex === index && (
-                  <div className="px-6 pb-6 text-base text-gray-300">
-                    <p>{item.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+                  <button
+                    className="w-full text-left px-6 py-4 text-xl font-semibold text-white focus:outline-none flex items-center justify-between"
+                    onClick={() => toggleAnswer(index)}
+                  >
+                    <span>{item.question}</span>
+                    <span className="ml-2">
+                      {activeIndex === index ? (
+                        <FaChevronUp className="text-[#aa3ea5]" />
+                      ) : (
+                        <FaChevronDown className="text-[#aa3ea5]" />
+                      )}
+                    </span>
+                  </button>
+                  {activeIndex === index && (
+                    <div className="px-6 pb-6 text-base text-gray-300">
+                      <p>{item.answer}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
 
-          {/* Right Column - Image Section */}
-          <div className="flex justify-center items-center">
-            <img
-              src={eb5} // Replace with an actual image URL
-              alt="EB-5 Image"
-              className="rounded-lg w-full max-w-md"
-            />
+            {/* Right Column - Image Section */}
+            <div className="flex justify-center items-center" data-aos="fade-left">
+              <img
+                src={eb5} // Replace with an actual image URL
+                alt="EB-5 Image"
+                className="rounded-lg w-full max-w-md"
+              />
+            </div>
           </div>
         </div>
       </div>

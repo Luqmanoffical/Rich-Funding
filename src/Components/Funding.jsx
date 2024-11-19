@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaFileDownload } from 'react-icons/fa';
 import cotton from '../assets/cotton.jpg';
 import galway from '../assets/galway.webp';
@@ -9,6 +9,9 @@ import parkstorage from '../assets/parkstorage.png';
 import beach from '../assets/beach.webp';
 import rio from '../assets/rio.webp';
 import './Designfile/Button.css';
+
+// Import AOS styles
+import 'aos/dist/aos.css';
 
 const investments = [
   '100,000 - 500,000',
@@ -107,6 +110,7 @@ const PropertyInvestmentSection = () => {
 
     setSelectedInvestment(investmentRange);
     const [min, max] = investmentRange.split(' - ').map(val => parseInt(val.replace(/,/g, '')));
+
     const filtered = properties.filter(property => {
       const investment = parseInt(property.investment.replace(/,/g, ''));
       return investment >= min && investment <= max;
@@ -114,17 +118,23 @@ const PropertyInvestmentSection = () => {
     setFilteredProperties(filtered);
   };
 
+  useEffect(() => {
+    // Initialize AOS on component mount
+    import('aos').then((AOS) => {
+      AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+    });
+  }, []);
+
   return (
-    <>
-      <div className='h-20' />
-      <div id="investing" className="flex flex-col items-center py-16 px-6 lg:px-20">
-        <h1 className="text-4xl font-bold text-center mb-4 text-white">Investment Opportunity</h1>
-        <h2 className="text-2xl font-semibold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-[#6d378d] via-[#972491] to-[#6d378d]">
+    <section id='investing' className='pt-11'>
+      <div className="flex flex-col items-center py-16 px-6 lg:px-20">
+        <h1 className="text-4xl font-bold text-center mb-4 text-white" data-aos="fade-up">Investment Opportunity</h1>
+        <h2 className="text-2xl font-semibold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-[#6d378d] via-[#972491] to-[#6d378d]" data-aos="fade-up" data-aos-delay="200">
           Explore all Investment Properties
         </h2>
 
         <div className="flex flex-col lg:flex-row w-full">
-          <div className="w-full lg:w-1/4 pr-6 lg:sticky lg:top-4 h-full">
+          <div className="w-full lg:w-1/4 pr-6 lg:sticky lg:top-4 h-full" data-aos="fade-right" data-aos-duration="1000">
             <h3 className="text-xl font-bold text-gray-200 mt-0 lg:mt-20 mb-6">Filter by Investment</h3>
             <button
               onClick={() => filterProperties('All')}
@@ -149,6 +159,8 @@ const PropertyInvestmentSection = () => {
                 <div
                   key={index}
                   className="bg-[#1f1a3d] rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 p-6 border border-gray-700"
+                  data-aos="zoom-in-up"
+                  data-aos-delay={index * 100}
                 >
                   <div className="overflow-hidden rounded-xl mb-4">
                     <img
@@ -179,12 +191,12 @@ const PropertyInvestmentSection = () => {
                 </div>
               ))
             ) : (
-              <p className="text-white">No properties available in this investment range.</p>
+              <p className="text-center text-gray-300">No properties found for this investment range.</p>
             )}
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

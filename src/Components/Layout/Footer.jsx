@@ -9,6 +9,7 @@ import {
 import Logo from '../../assets/Logorich.png';
 
 const Footer = () => {
+  
   return (
     <div>
       {/* Main Footer Section */}
@@ -63,18 +64,28 @@ const Footer = () => {
 
           {/* Contact Information */}
           <p className="text-sm text-gray-400 mb-4">
-            If you can’t find the answer to your questions, reach out to us.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm items-center">
-            <div className="flex items-center space-x-2 text-[#aa3ea5] cursor-pointer hover:text-teal-400 transition duration-300">
-              <FaPhoneAlt className="text-lg" />
-              <span>1-760-716-4170</span>
-            </div>
-            <div className="flex items-center space-x-2 text-[#aa3ea5] cursor-pointer hover:text-teal-400 transition duration-300">
-              <FaEnvelope className="text-lg" />
-              <span>richfunding@yahoo.com</span>
-            </div>
-          </div>
+  If you can’t find the answer to your questions, reach out to us.
+</p>
+<div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm items-center">
+  {/* Phone Link */}
+  <a
+    href="tel:+17607164170"
+    className="flex items-center space-x-2 text-[#aa3ea5] cursor-pointer hover:text-teal-400 transition duration-300"
+  >
+    <FaPhoneAlt className="text-lg" />
+    <span>1-760-716-4170</span>
+  </a>
+  
+  {/* Email Link */}
+  <a
+    href="mailto:richfunding@yahoo.com"
+    className="flex items-center space-x-2 text-[#aa3ea5] cursor-pointer hover:text-teal-400 transition duration-300"
+  >
+    <FaEnvelope className="text-lg" />
+    <span>richfunding@yahoo.com</span>
+  </a>
+</div>
+
         </div>
       </footer>
 
