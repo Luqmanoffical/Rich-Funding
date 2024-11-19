@@ -14,13 +14,13 @@ const Consulting = () => {
 
   return (
     <>
-    <div  id="consultation">
-      <section   >
-        <div className="relative min-h-screen overflow-hidden font-poppins">
+    
+      <section>
+        <div  className="relative min-h-screen overflow-hidden font-poppins">
           {/* LampContainer positioned closer to the Header */}
 
           {/* Consultation Page Content */}
-          <div   className="relative z-10 flex flex-col justify-center  md:p-10 min-h-screen">
+          <div id="consultation"   className="relative z-10 flex flex-col justify-center  md:p-10 min-h-screen">
             <div className="flex flex-col items-center mt-10 md:mt-20 text-white">
               {/* Page Header */}
               <h1
@@ -63,7 +63,7 @@ const Consulting = () => {
                     Phone: <a href="tel:1-760-716-4170" className="underline hover:text-blue-300">1-760-716-4170</a><br />
                     Fax: 1-951-699-3202
                   </p>
-                  <p className="mt-4 text-sm md:text-base">
+                  <p  className="mt-4 text-sm md:text-base">
                     Email Me: <a href="mailto:richfunding@yahoo.com" className="underline hover:text-blue-300">richfunding@yahoo.com</a><br />
                     <a href="https://richfunding.wordpress.com/" target="_blank" rel="noopener noreferrer">
                       <button className="gradient-button mt-7">Visit my blog here</button>
@@ -75,7 +75,7 @@ const Consulting = () => {
           </div>
         </div>
       </section>
-      </div>
+      
     </>
   );
 };
