@@ -54,7 +54,7 @@ const HeroSection = () => {
       <Header activeSection={activeSection} />
 
       {/* Hero Section */}
-      <section id='home' className="flex flex-col md:flex-row items-center justify-between p-6 md:p-10 min-h-screen">
+      <section id='home' className="flex flex-col md:flex-row items-center pt-10 mt-0 lg:-mt-20 justify-between p-6 md:p-10 min-h-screen ">
   {/* Left Side: Text Content */}
   <div className="flex flex-col w-full md:w-1/2 space-y-4 mb-6 md:mb-0" data-aos="fade-right">
     <h1 className="text-3xl md:text-5xl font-bold text-gray-200">
@@ -93,7 +93,7 @@ const HeroSection = () => {
   </div>
 
   {/* Right Side: Image Layout */}
-  <div className="flex flex-col w-full md:w-1/2 items-center md:items-end" data-aos="fade-left">
+  <div className="flex pt-6 flex-col w-full md:w-1/2 items-center md:items-end" data-aos="fade-left">
     {/* Image Grid */}
     <div className="grid grid-cols-2 gap-2 mb-4 md:mb-2">
       <img src={pr} alt="Square 1" className="w-full md:w-[250px] h-[200px] object-cover rounded-3xl shadow-lg transition-transform transform hover:scale-105" data-aos="fade-up"/>
@@ -101,7 +101,7 @@ const HeroSection = () => {
     </div>
     <img src={rectangleImage} alt="Rectangle" className="w-full md:w-[520px] h-[250px] object-cover rounded-3xl shadow-2xl transition-transform transform hover:scale-105" data-aos="zoom-in"/>
   </div>
-</section>
+</section >
 
       <PropertyInvestmentSection />
       <Investing />

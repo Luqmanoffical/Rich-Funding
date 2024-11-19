@@ -116,10 +116,17 @@ const PropertyInvestmentSection = () => {
     setFilteredProperties(filtered);
   };
 
+
   return (
-    <div id="investing" className="flex flex-col items-center py-16 px-6 lg:px-20">
+    <>
+    <div className='h-20'>
+      </div>
+    <div id="investing" className="flex flex-col items-center  py-16 px-6 lg:px-20">
       {/* Main Headings */}
-      <h1 className="text-4xl font-bold text-center mb-4 text-white">
+      
+
+     
+      <h1 className="text-4xl font-bold text-center  mb-4 text-white">
         Investment Opportunity
       </h1>
       <h2 className="text-2xl font-semibold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-[#6d378d] via-[#972491] to-[#6d378d]">
@@ -148,7 +155,7 @@ const PropertyInvestmentSection = () => {
         </div>
 
         {/* Property Cards */}
-        <div className="w-full lg:w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="w-full lg:w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-10">
           {filteredProperties.length > 0 ? (
             filteredProperties.map((property, index) => (
               <div
@@ -188,6 +195,7 @@ const PropertyInvestmentSection = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
