@@ -6,6 +6,7 @@ import 'aos/dist/aos.css';
 import squareImage1 from '../assets/property3.jpg';
 import squareImage2 from '../assets/property2.jpg';
 import rectangleImage from '../assets/property1.jpg';
+import pr from '../assets/pr.jpeg';
 import './Designfile/Button.css';
 import PropertyInvestmentSection from './Funding';
 import Footer from './Layout/Footer';
@@ -95,7 +96,7 @@ const HeroSection = () => {
   <div className="flex flex-col w-full md:w-1/2 items-center md:items-end" data-aos="fade-left">
     {/* Image Grid */}
     <div className="grid grid-cols-2 gap-2 mb-4 md:mb-2">
-      <img src={squareImage1} alt="Square 1" className="w-full md:w-[250px] h-[200px] object-cover rounded-3xl shadow-lg transition-transform transform hover:scale-105" data-aos="fade-up"/>
+      <img src={pr} alt="Square 1" className="w-full md:w-[250px] h-[200px] object-cover rounded-3xl shadow-lg transition-transform transform hover:scale-105" data-aos="fade-up"/>
       <img src={squareImage2} alt="Square 2" className="w-full md:w-[250px] h-[200px] object-cover rounded-3xl shadow-lg transition-transform transform hover:scale-105" data-aos="fade-up"/>
     </div>
     <img src={rectangleImage} alt="Rectangle" className="w-full md:w-[520px] h-[250px] object-cover rounded-3xl shadow-2xl transition-transform transform hover:scale-105" data-aos="zoom-in"/>

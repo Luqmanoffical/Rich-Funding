@@ -46,9 +46,12 @@ const Consulting = () => {
                 Fax: 1-951-699-3202
               </p>
               <p className="mt-4 text-sm md:text-base">
-                Email Me: <a href="mailto:richfunding@yahoo.com" className="underline hover:text-blue-300">richfunding@yahoo.com</a><br />
-                <button href="#" className="gradient-button">Visit my blog here</button>
-              </p>
+  Email Me: <a href="mailto:richfunding@yahoo.com" className="underline hover:text-blue-300">richfunding@yahoo.com</a><br />
+  <a href="https://richfunding.wordpress.com/" target="_blank" rel="noopener noreferrer">
+    <button className="gradient-button">Visit my blog here</button>
+  </a>
+</p>
+
             </div>
           </div>
         </div>

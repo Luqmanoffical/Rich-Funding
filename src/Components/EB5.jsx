@@ -1,6 +1,6 @@
-// FAQSection.jsx or your React component
 import React, { useState } from 'react';
-import eb5 from '../assets/eb5.png'
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa'; // Importing icons
+import eb5 from '../assets/eb5.png';
 
 const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -28,25 +28,32 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-16 text-white">
+    <section id='eb5' className="py-16 text-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Column - FAQ Section */}
           <div className="space-y-6">
             <h2 className="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#aa3ea5] to-blue-500 text-center lg:text-left">
-            EB-5 Program
+              EB-5 Program
             </h2>
-            <p className="text-lg ">
-            Learn about the EB-5 visa program and its benefits for investors.
+            <p className="text-lg">
+              Learn about the EB-5 visa program and its benefits for investors.
             </p>
 
             {faqData.map((item, index) => (
               <div key={index} className="bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
                 <button
-                  className="w-full text-left px-6 py-4 text-xl font-semibold text-white focus:outline-none"
+                  className="w-full text-left px-6 py-4 text-xl font-semibold text-white focus:outline-none flex items-center justify-between"
                   onClick={() => toggleAnswer(index)}
                 >
-                  {item.question}
+                  <span>{item.question}</span>
+                  <span className="ml-2">
+                    {activeIndex === index ? (
+                      <FaChevronUp className="text-[#aa3ea5]" />
+                    ) : (
+                      <FaChevronDown className="text-[#aa3ea5]" />
+                    )}
+                  </span>
                 </button>
                 {activeIndex === index && (
                   <div className="px-6 pb-6 text-base text-gray-300">
@@ -62,7 +69,7 @@ const FAQSection = () => {
             <img
               src={eb5} // Replace with an actual image URL
               alt="EB-5 Image"
-              className="rounded-lg  w-full max-w-md"
+              className="rounded-lg w-full max-w-md"
             />
           </div>
         </div>

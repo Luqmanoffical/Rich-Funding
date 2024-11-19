@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { FaFileDownload } from 'react-icons/fa';
 import propertyImage from '../assets/property1.jpg';
+import cotton from '../assets/cotton.jpg'
+import galway from '../assets/galway.webp'
+import helmet from '../assets/helmet.webp'
+import desol from '../assets/desol.jpeg'
+import helcon from '../assets/helcon.jpg'
+import parkstorage from '../assets/parkstorage.png'
+import beach from '../assets/beach.webp'
+import rio from '../assets/rio.webp'
 import './Designfile/Button.css';
 
 const investments = [ 
@@ -19,7 +27,7 @@ const properties = [
   {
     title: 'Cottonwood Retail Center',
     investment: '5,400,000',
-    image: propertyImage,
+    image: cotton,
     location: 'San Jacinto, Riverside County, California',
     description: `73,800+ square feet, 11.28-acre site, zoned for commercial/retail uses.
                   High growth area of Hemet Valley with many credit tenants vying for position.
@@ -30,7 +38,7 @@ const properties = [
   {
     title: ' Galway Downs',
     investment: '20,000,000',
-    image: propertyImage,
+    image: galway,
     location: 'Temecula, Southern California',
     description: `150,000+ square feet, 5-acre site, prime office space location.
                   High demand for office leasing in downtown LA.
@@ -39,69 +47,51 @@ const properties = [
     pdf: '/path/to/pdf'
   },
   {
-    title: 'Sunset Heights Residential',
-    investment: '3,200,000',
-    image: propertyImage,
-    location: 'Phoenix, Arizona',
-    description: `45,000+ square feet, 10-acre site, zoned for residential use.
-                  High-end residential development in a growing market.
-                  Equity Requirement: 2 Million. Annual Net Operating Income: 800K.
-                  Total Costs: $10 Million.`,
-    pdf: '/path/to/pdf'
-  },
-  {
-    title: 'Riverfront Mall Expansion',
+    title: '63 Acres, Hemet CA',
     investment: '8,000,000',
-    image: propertyImage,
-    location: 'Chicago, Illinois',
-    description: `120,000+ square feet, 15-acre site, mixed-use commercial space.
-                  Growing demand for retail and commercial spaces.
-                  Equity Requirement: 4 Million. Annual Net Operating Income: 2 Million.
-                  Total Costs: $18 Million.`,
+    image: helmet,
+    location: 'Hemet CA',
+    description: `Prime Development / Investment opportunity located in the heart of the majority of the new housing and commercial growth. Several key retail projects proposed. Priced to sell, asking $10,500,000 ($3.77/sf)`,
     pdf: '/path/to/pdf'
   },
   {
-    title: 'Lakeside Luxury Condominiums',
-    investment: '10,500,000',
-    image: propertyImage,
+    title: 'Lomas Del Sol',
+    investment: '80,000,000',
+    image: desol,
+    location: 'Coachella, California',
+    description: `Lomas Del Sol is a 2,200 acre, 9070 unit master-planned resort community being proposed in Coachella, California which is approximately 20 miles east of Palm Springs, 70 miles east of Riverside, and 120 miles east of Los Angeles. The project consists of 2,200 acres with 9070 residential units, 1,100,000 SF of commercial, a 500 room hotel, three school sites, two golf courses, parks and open spaces.`,
+    pdf: '/path/to/pdf'
+  },
+  {
+    title: 'Halcon Rojo Business Park',
+    investment: '4,460,000',
+    image: helcon,
     location: 'Lake Tahoe, California',
-    description: `50,000+ square feet, 3-acre waterfront site, zoned for luxury condos.
-                  High potential for rental income in prime tourist location.
-                  Equity Requirement: 5 Million. Annual Net Operating Income: 1.5 Million.
-                  Total Costs: $30 Million.`,
+    description: `Proceeds will be used to pay off the balance of the Land Loan and to continue with the engineering and planning and permitting work of the project. Exit Strategy is to pay a portion the investment from procceds of the Construction Loan and the balance from proceeds of a Permanent Loan.`,
     pdf: '/path/to/pdf'
   },
   {
-    title: 'Cityview Tower Redevelopment',
-    investment: '15,000,000',
-    image: propertyImage,
-    location: 'San Francisco, California',
-    description: `200,000+ square feet, 10-acre site, commercial/office redevelopment.
-                  Prime location with high demand for office space in the city.
-                  Equity Requirement: 7 Million. Annual Net Operating Income: 5 Million.
-                  Total Costs: $40 Million.`,
+    title: 'Rancho Pueblo Business Park and Super Storage',
+    investment: '12,000,000',
+    image: parkstorage,
+
+    description: `This is a Premier mixed-use project consisting of 14.8 acres made up of 8-parcels: self-storage facility, five two-story A-class professional office buildings, and two restaurant pads. Most of the office space is already pre-sold and pre-leased. The restaurant pads are currently on the market for sale. This project is located in Temecula, halfway between Los Angeles and San Diego cities.`,
     pdf: '/path/to/pdf'
   },
   {
-    title: 'Mountain Ridge Resort',
-    investment: '7,000,000',
-    image: propertyImage,
-    location: 'Aspen, Colorado',
-    description: `100,000+ square feet, 20-acre resort development.
-                  Prime location for luxury resorts and vacation homes.
-                  Equity Requirement: 3.5 Million. Annual Net Operating Income: 2 Million.
-                  Total Costs: $20 Million.`,
+    title: 'Ventura Beach Ranch',
+    investment: '18,000,000',
+    image: beach,
+    location: 'west coast, Ventura',
+    description: `Located in one of the most popular places on the west coast, Ventura is the place to be! Especially on this Beach-Front property. Unique size and location, close to both Los Angeles and Santa Barbara areas, and easy access to the 101 freeway - this property is hard to beat!`,
     pdf: '/path/to/pdf'
   },
   {
-    title: 'Golden Valley Business Park',
-    investment: '9,000,000',
-    image: propertyImage,
-    location: 'Dallas, Texas',
-    description: `130,000+ square feet, 8-acre site, industrial park development.
-                  High demand for warehouse and distribution centers.
-                  Equity Requirement: 4.5 Million. Annual Net Operating Income: 2.5 Million.
-                  Total Costs: $25 Million.`,
+    title: 'Rio Vistancia',
+    investment: '1,000,000',
+    image: rio,
+    location: 'Colorado River in Needles, California',
+    description: `Rio Vistancia is a 113 acre riverfront master-planned resort community located on the Colorado River in Needles, California. The site straddles both the Colorado River and Needles Highway, the main gateway for over 5 ½ million annual visitors to Laughlin, Nevada and only two miles off the busy Interstate 40 Freeway. It is just two to three hours away from Los Angeles, Orange, and Riverside Counties.`,
     pdf: '/path/to/pdf'
   }
 ];

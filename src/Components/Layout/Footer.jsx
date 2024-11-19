@@ -1,67 +1,124 @@
-import React from "react";
-import Logo from "../../assets/Logorich.png";
+import React from 'react';
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+} from 'react-icons/fa';
+import Logo from '../../assets/Logorich.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0e0c15] text-gray-300 py-8 border-t-2 border-[#aa3ea54f]">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-center px-6 ">
-        {/* Logo and Tagline */}
-        <div className="flex flex-col items-center md:items-start">
-          <img src={Logo} alt="Rich Realty" className="h-12 mb-2" />
-          <p className="text-sm text-gray-400 text-center md:text-left leading-relaxed">
-            Trusted solutions for property investments, buying, and selling.
-          </p>
-        </div>
+    <div>
+      {/* Main Footer Section */}
+      <footer className="bg-[#0e0c15] py-10">
+        <div className="max-w-screen-xl mx-auto text-center text-white px-6">
+          {/* Logo */}
+          <div className="mb-6">
+            <img src={Logo} alt="Logo" className="mx-auto h-16 w-auto" />
+          </div>
 
-        {/* Quick Links */}
-        <nav className="text-center md:text-left">
-          <h3 className="text-lg font-semibold text-gray-200 mb-4 uppercase tracking-wide">
-            Quick Links
-          </h3>
-          <ul className="space-y-2">
-            {["About Us", "Properties", "Services", "Contact"].map((item) => (
-              <li key={item}>
-                <a
-                  href={`#${item.toLowerCase().replace(/\s+/g, "")}`}
-                  className="text-gray-400 hover:text-[#009ca0] transition-colors duration-300"
-                >
-                  {item}
-                </a>
-              </li>
-            ))}
+          {/* Description */}
+          <p className="text-lg font-light max-w-2xl mx-auto mb-8 leading-relaxed">
+            Building bridges to brighter futures. Discover opportunities with RichFunding and take the first step toward success.
+          </p>
+
+          {/* Navigation Links */}
+          <ul className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm uppercase font-medium tracking-wide mb-8">
+            <li>
+              <a href="#home" className="hover:text-[#aa3ea5] transition-colors duration-300 cursor-pointer">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#investing" className="hover:text-[#aa3ea5] transition-colors duration-300 cursor-pointer">
+                Investing
+              </a>
+            </li>
+            <li>
+              <a href="#funding" className="hover:text-[#aa3ea5] transition-colors duration-300 cursor-pointer">
+                Funding
+              </a>
+            </li>
+            <li>
+              <a href="#eb5" className="hover:text-[#aa3ea5] transition-colors duration-300 cursor-pointer">
+                EB-5
+              </a>
+            </li>
+            <li>
+              <a href="#consultation" className="hover:text-[#aa3ea5] transition-colors duration-300 cursor-pointer">
+                Consultation
+              </a>
+            </li>
+            <li>
+              <a href="https://richfunding.wordpress.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[#aa3ea5] transition-colors duration-300 cursor-pointer">
+                Blog
+              </a>
+            </li>
           </ul>
-        </nav>
 
-        {/* Contact Info */}
-        <div className="text-center md:text-left">
-          <h3 className="text-lg font-semibold text-gray-200 mb-4 uppercase tracking-wide">
-            Contact Us
-          </h3>
-          <p className="text-sm text-gray-400">
-            Phone:{" "}
-            <a href="tel:+1234567890" className="hover:text-[#009ca0]">
-              +1 (234) 567-890
-            </a>
+          {/* Divider */}
+          <div className="border-t border-gray-600 my-8"></div>
+
+          {/* Contact Information */}
+          <p className="text-sm text-gray-400 mb-4">
+            If you can’t find the answer to your questions, reach out to us.
           </p>
-          <p className="text-sm text-gray-400">
-            Email:{" "}
-            <a href="mailto:info@richrealty.com" className="hover:text-[#009ca0]">
-              info@richrealty.com
-            </a>
-          </p>
-          <p className="text-sm text-gray-400">
-            Address: 123 Realty Lane, Cityville, USA
-          </p>
+          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm items-center">
+            <div className="flex items-center space-x-2 text-[#aa3ea5] cursor-pointer hover:text-teal-400 transition duration-300">
+              <FaPhoneAlt className="text-lg" />
+              <span>1-760-716-4170</span>
+            </div>
+            <div className="flex items-center space-x-2 text-[#aa3ea5] cursor-pointer hover:text-teal-400 transition duration-300">
+              <FaEnvelope className="text-lg" />
+              <span>richfunding@yahoo.com</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      {/* Footer Bottom */}
+      <div className="bg-gray-900 flex flex-col md:flex-row justify-between items-center text-white py-4 px-6">
+        {/* Left: First Paragraph */}
+        <p className="text-sm text-center md:text-left mb-4 md:mb-0">
+          Designed and Developed by <span className="text-[#aa3ea5]">Glaxit</span>.
+        </p>
+
+        {/* Center: Second Paragraph */}
+        <p className="text-xs text-gray-400 text-center mb-4 md:mb-0">
+          © 2008 Mountain Top Media & RichFundingLLC. All Rights Reserved.
+        </p>
+
+        {/* Right: Social Icons */}
+        <div className="flex justify-center md:justify-end space-x-4">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-[#aa3ea5] transition duration-300"
+          >
+            <FaFacebookF className="text-lg" />
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-[#aa3ea5] transition duration-300"
+          >
+            <FaTwitter className="text-lg" />
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-[#aa3ea5] transition duration-300"
+          >
+            <FaLinkedinIn className="text-lg" />
+          </a>
         </div>
       </div>
-
-      {/* Bottom Line */}
-      <div className="mt-6 border-t border-gray-700 pt-4 text-center">
-        <p className="text-sm text-gray-500">
-          © {new Date().getFullYear()} Rich Realty. All rights reserved.
-        </p>
-      </div>
-    </footer>
+    </div>
   );
 };
 
