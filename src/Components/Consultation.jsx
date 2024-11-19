@@ -32,11 +32,11 @@ const Consulting = () => {
 
               {/* Introduction */}
               <p
-                className="font-poppins text-center mt-4 max-w-3xl text-sm md:text-base"
+                className="font-poppins  mt-4 max-w-3xl text-sm md:text-base m-5 lg:m-10  text-justify"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
-                At <span className="font-bold">FundingRich.com</span>, we specialize in personalized financial consulting services to help you achieve your funding and financial goals. Our experts work closely with you to provide tailored advice and solutions that support your growth and success.
+                At <span className="font-bold ">FundingRich.com</span>, we specialize in personalized financial consulting services to help you achieve your funding and financial goals. Our experts work closely with you to provide tailored advice and solutions that support your growth and success.
               </p>
 
               {/* Row Layout for Image and Contact Info */}

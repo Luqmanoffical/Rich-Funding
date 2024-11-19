@@ -173,7 +173,7 @@ const PropertyInvestmentSection = () => {
                   <div className="space-y-4">
                     <h3 className="text-2xl text-white font-semibold">{property.title}</h3>
                     <p className="text-gray-400 text-sm italic">{property.location}</p>
-                    <p className="text-gray-300 leading-relaxed">{property.description}</p>
+                    <p className="text-gray-300 leading-relaxed text-justify">{property.description}</p>
 
                     <div className="mt-6 flex items-center justify-between">
                       <span className="text-xl font-semibold text-[#aa3ea5]">{`$${property.investment}`}</span>
