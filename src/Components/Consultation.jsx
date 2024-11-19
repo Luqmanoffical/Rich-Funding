@@ -14,12 +14,13 @@ const Consulting = () => {
 
   return (
     <>
-      <section id="consultation" className="">
-        <div className="relative min-h-screen overflow-hidden font-poppins pt-11">
+    <div  id="consultation">
+      <section   >
+        <div className="relative min-h-screen overflow-hidden font-poppins">
           {/* LampContainer positioned closer to the Header */}
 
           {/* Consultation Page Content */}
-          <div className="relative z-10 flex flex-col justify-center p-6 md:p-10 min-h-screen">
+          <div   className="relative z-10 flex flex-col justify-center  md:p-10 min-h-screen">
             <div className="flex flex-col items-center mt-10 md:mt-20 text-white">
               {/* Page Header */}
               <h1
@@ -74,6 +75,7 @@ const Consulting = () => {
           </div>
         </div>
       </section>
+      </div>
     </>
   );
 };

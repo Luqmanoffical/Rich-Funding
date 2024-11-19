@@ -4,7 +4,7 @@ import eb5 from '../assets/eb5.png'; // Replace with actual image URL
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
 
-const FAQSection = () => {
+const EB5 = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAnswer = (index) => {
@@ -80,7 +80,7 @@ const FAQSection = () => {
             </div>
 
             {/* Right Column - Image Section */}
-            <div className="flex justify-center items-center" data-aos="fade-left">
+            <div  className="flex justify-center items-center" data-aos="fade-left">
               <img
                 src={eb5} // Replace with an actual image URL
                 alt="EB-5 Image"
@@ -94,4 +94,4 @@ const FAQSection = () => {
   );
 };
 
-export default FAQSection;
+export default EB5;
