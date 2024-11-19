@@ -46,7 +46,7 @@ const Investing = () => {
             }].map((card, index) => (
               <div
                 key={index}
-                className="bg-[#1f1a3d] p-8 rounded-lg shadow-xl  transform transition hover:scale-105 hover:shadow-2xl border-t-4 border-[#aa3ea5] hover:border-[#e94057] text-center relative"
+                className="bg-[#1f1a3d] p-8 rounded-lg shadow-xl  transform transition hover:scale-105 hover:shadow-2xl border-t-4 border-[#aa3ea5]  text-center relative"
               >
                 <img
                   src={imger}
