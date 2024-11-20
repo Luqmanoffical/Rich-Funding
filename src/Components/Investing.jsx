@@ -15,8 +15,8 @@ const Investing = () => {
   };
 
   return (
-    <div id='funding' className='pt-11'>
-      <section  className="py-12 mt-20 ">
+    <div id='funding' className=''>
+      <section  className="py-12 pt-0 lg:pt-20 ">
         <div className="container mx-auto text-center px-4">
           <h2 className="text-4xl font-bold text-white mb-6">Loan Offers</h2>
           <p className="text-gray-300 text-lg mb-12 max-w-3xl mx-auto text-justify">

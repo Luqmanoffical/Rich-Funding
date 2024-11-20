@@ -132,7 +132,7 @@ const HeroSection = () => {
       <PropertyInvestmentSection />
       <Investing />
       <EB5 />
-      <Consulting />
+      <Consulting    />
       <Footer />
     </div>
   );
