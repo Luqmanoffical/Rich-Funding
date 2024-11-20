@@ -53,7 +53,7 @@ const HeroSection = () => {
       {/* Hero Section */}
       <section
   id="home"
-  className="flex w-full flex-col md:flex-row items-center pt-10 mt-0 lg:-mt-20 justify-between p-6 md:p-10 min-h-screen space-y-6 md:space-y-0"
+  className="flex w-full flex-col  md:flex-row items-center pt-20 mt-0 lg:-mt-20 justify-between p-6 md:p-10 min-h-screen space-y-6 md:space-y-0"
 >
   {/* Left: Hero Content */}
   <div
@@ -103,7 +103,7 @@ const HeroSection = () => {
 
   {/* Right: Image Grid */}
   <div
-    className="flex flex-col w-full md:w-1/2 items-center md:items-end gap-4 "
+    className="flex flex-col  w-full md:w-1/2 items-center md:items-end gap-4 "
     data-aos="fade-left"
   >
     {/* Image Grid */}

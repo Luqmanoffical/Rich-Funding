@@ -15,8 +15,8 @@ const Consulting = () => {
   return (
     <>
     
-      <section id="consultation" className="overflow-x-hidden" >
-        <div  className="relative min-h-screen overflow-hidden font-poppins">
+      <section id="consultation" className="overflow-x-hidden " >
+        <div  className="relative min-h-screen overflow-hidden pt-20 font-poppins">
           {/* LampContainer positioned closer to the Header */}
 
           {/* Consultation Page Content */}
